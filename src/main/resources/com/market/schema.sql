@@ -1,0 +1,19 @@
+delete from PROJECT;delete from BID;delete from PERSON;delete from PRODUCT;delete from CATEGORY;
+
+drop table BID;
+create table BID 
+(ID int, PROPOSAL varchar, AMOUNT decimal, ENGINEER_ID int, PROJECT_ID int);
+create unique index bid_key on BID(ENGINEER_ID, PROJECT_ID);
+
+drop table PROJECT;
+create table PROJECT 
+(ID int, PROJECT_NAME varchar, DESCRIPTION varchar, BUDGET decimal, ENDING_DATE date, ASSIGNEE_ID int, OWNER_ID int);
+create unique index project_key on PROJECT(PROJECT_NAME);
+
+drop table PERSON;
+create table PERSON (ID int, NAME varchar, CONTACT_INFO varchar);
+create unique index person_key on PERSON(NAME);
+
+select * from person;
+select * from project;
+select * from bid;

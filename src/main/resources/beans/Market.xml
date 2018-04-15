@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Market business object -->
+   <bean id="commonHelper" class="com.market.helper.CommonHelper" >
+   		<property name="database" ref="database" />
+   </bean>
+   <bean id="personHelper" class="com.market.helper.PersonHelper" >
+   		<property name="database" ref="database" />
+   		<property name="validation" ref="validation" />   		
+   </bean>
+   <bean id="projectHelper" class="com.market.helper.ProjectHelper" >
+   		<property name="database" ref="database" />
+   		<property name="validation" ref="validation" />   		
+   </bean>
+   <bean id="bidHelper" class="com.market.helper.BidHelper" >
+   		<property name="database" ref="database" />
+   		<property name="validation" ref="validation" />   		
+   </bean>
+   
+   <bean id="validation" class="com.market.validation.Validation" >
+   		<property name="database" ref="database" />
+   </bean>
+ 
+   <!-- Market Data Access Object -->
+   <bean id="database" class="com.market.data.Database" >
+   		<property name="sessionFactory" ref="sessionFactory"></property>
+   </bean>
+   
+   		
+</beans>

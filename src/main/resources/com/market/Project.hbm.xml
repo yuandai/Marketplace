@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 22, 2014 2:18:12 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.market.data.Project" table="PROJECT">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="projectName" type="java.lang.String">
+            <column name="PROJECT_NAME" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" />
+        </property>
+        <property name="budget" type="java.math.BigDecimal">
+            <column name="BUDGET" />
+        </property>
+        <property name="endingDate" type="java.util.Date">
+            <column name="ENDING_DATE" />
+        </property>
+        
+        <many-to-one name="assignee" class="com.market.data.Person" lazy="false" fetch="join">
+            <column name="ASSIGNEE_ID" not-null="false"/>
+        </many-to-one>
+        <many-to-one name="owner" class="com.market.data.Person" lazy="false" fetch="join">
+            <column name="OWNER_ID" not-null="true"/>
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>
+
