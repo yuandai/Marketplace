@@ -95,7 +95,7 @@ http://localhost:8080/MarketPlace/rest/service/bids
 }
 
 
-6. Assign
+5. Assign
 
 
 Assign project to lowest bid
