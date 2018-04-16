@@ -51,7 +51,7 @@ public class Database extends HibernateDaoSupport {
 		String[] params = {projectName};
 		List list = getHibernateTemplate().find("from Project as proj where proj.projectName = ? ", params);
         
-        if (list != null && list.size() > 1)
+        if (list != null && list.size() >= 1)
         	return (Project)list.get(0);
         else
         	return null;
@@ -101,7 +101,7 @@ public class Database extends HibernateDaoSupport {
 		
 		String[] params = {projectName, name};
 		List<Bid> list = getHibernateTemplate().find("from Bid as bid where bid.project.projectName = ? and bid.engineer.name = ?", params);
-        if (list != null && list.size() > 1)
+        if (list != null && list.size() >= 1)
         	return list.get(0);
         else
         	return null;

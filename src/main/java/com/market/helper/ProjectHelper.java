@@ -77,7 +77,7 @@ public class ProjectHelper {
 	
 	public ProjectBidsDTO getProjectWithAllBids(String projectName) {
 		
-		ProjectBidsDTO projBids = new ProjectBidsDTO();
+		ProjectBidsDTO projBids = null;
 		
 		Project proj = database.getProject(projectName);
 		
@@ -93,8 +93,7 @@ public class ProjectHelper {
 			
 		}		
 		
-		projBids.setProject(proj);
-		projBids.setBids(bids);
+		projBids = new ProjectBidsDTO(proj, bids);
 		
 		return projBids;
 	}

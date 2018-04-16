@@ -1,4 +1,4 @@
-delete from PROJECT;delete from BID;delete from PERSON;delete from PRODUCT;delete from CATEGORY;
+delete from PROJECT;delete from BID;delete from PERSON;
 
 drop table BID;
 create table BID 
